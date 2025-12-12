@@ -83,8 +83,12 @@ async function generateContent() {
         const data = await response.json();
         const generatedText = data.content[0].text;
 
-        // Display the content
-        displayContent(generatedText, topic);
+        // Calculate cost
+        const usage = data.usage;
+        const costInfo = calculateCost(usage);
+
+        // Display the content with cost info
+        displayContent(generatedText, topic, costInfo);
 
     } catch (error) {
         console.error('Error:', error);
@@ -159,14 +163,63 @@ FORMATTING RULES:
 Begin the article now:`;
 }
 
-function displayContent(content, topic) {
+function calculateCost(usage) {
+    // Claude 3 Haiku pricing (as of 2025)
+    // Input: $0.25 per million tokens
+    // Output: $1.25 per million tokens
+    const INPUT_PRICE_PER_MILLION = 0.25;
+    const OUTPUT_PRICE_PER_MILLION = 1.25;
+
+    const inputTokens = usage.input_tokens;
+    const outputTokens = usage.output_tokens;
+    const totalTokens = inputTokens + outputTokens;
+
+    const inputCost = (inputTokens / 1000000) * INPUT_PRICE_PER_MILLION;
+    const outputCost = (outputTokens / 1000000) * OUTPUT_PRICE_PER_MILLION;
+    const totalCost = inputCost + outputCost;
+
+    return {
+        inputTokens,
+        outputTokens,
+        totalTokens,
+        totalCost: totalCost.toFixed(4)
+    };
+}
+
+function displayContent(content, topic, costInfo) {
     const outputSection = document.getElementById('outputSection');
     const generatedContent = document.getElementById('generatedContent');
     const inputForm = document.getElementById('inputForm');
+    const costInfoDiv = document.getElementById('costInfo');
 
     // Hide the form and show the output
     inputForm.classList.add('hidden');
     outputSection.classList.remove('hidden');
+
+    // Display cost information
+    if (costInfo) {
+        costInfoDiv.innerHTML = `
+            <h3>📊 Generation Stats</h3>
+            <div class="cost-details">
+                <div class="cost-detail">
+                    <span class="label">Input Tokens</span>
+                    <span class="value">${costInfo.inputTokens.toLocaleString()}</span>
+                </div>
+                <div class="cost-detail">
+                    <span class="label">Output Tokens</span>
+                    <span class="value">${costInfo.outputTokens.toLocaleString()}</span>
+                </div>
+                <div class="cost-detail">
+                    <span class="label">Total Tokens</span>
+                    <span class="value">${costInfo.totalTokens.toLocaleString()}</span>
+                </div>
+                <div class="cost-detail">
+                    <span class="label">Cost</span>
+                    <span class="value">$${costInfo.totalCost}</span>
+                </div>
+            </div>
+        `;
+    }
 
     // Set the generated content
     generatedContent.innerHTML = content;
