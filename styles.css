@@ -271,7 +271,7 @@ button[type="submit"].processing {
 
 /* Visibility */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Generated Content */
