@@ -51,6 +51,7 @@ async function generateContent() {
     generateBtn.classList.add('processing');
 
     // Show loading message
+    loadingMessage.style.display = 'block';
     loadingMessage.classList.remove('hidden');
 
     try {
@@ -104,6 +105,7 @@ async function generateContent() {
         generateBtn.textContent = 'Generate Learning Material';
         generateBtn.disabled = false;
         generateBtn.classList.remove('processing');
+        loadingMessage.style.display = 'none';
         loadingMessage.classList.add('hidden');
     }
 }
