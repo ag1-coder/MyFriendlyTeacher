@@ -304,40 +304,69 @@ function printArticle() {
             <title>Print Article</title>
             <style>
                 body {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
                     color: #333;
                     padding: 1in;
                     max-width: 8.5in;
                     margin: 0 auto;
+                    font-size: 11pt;
+                    line-height: 1.6;
                 }
                 body.age-young {
-                    font-size: 1.3rem;
-                    line-height: 2.2;
+                    font-size: 12pt;
+                    line-height: 1.8;
+                }
+                body.age-young h1 {
+                    font-size: 20pt;
+                }
+                body.age-young h2 {
+                    font-size: 15pt;
+                }
+                body.age-young h3 {
+                    font-size: 13pt;
                 }
                 body.age-preteen {
-                    font-size: 1.15rem;
-                    line-height: 1.9;
+                    font-size: 11pt;
+                    line-height: 1.7;
+                }
+                body.age-preteen h1 {
+                    font-size: 19pt;
+                }
+                body.age-preteen h2 {
+                    font-size: 14pt;
+                }
+                body.age-preteen h3 {
+                    font-size: 12pt;
                 }
                 body.age-teen-adult {
-                    font-size: 1.1rem;
-                    line-height: 1.8;
+                    font-size: 11pt;
+                    line-height: 1.6;
+                }
+                body.age-teen-adult h1 {
+                    font-size: 18pt;
+                }
+                body.age-teen-adult h2 {
+                    font-size: 14pt;
+                }
+                body.age-teen-adult h3 {
+                    font-size: 12pt;
                 }
                 h1 {
                     color: #4a90e2;
                     margin-bottom: 1rem;
-                    font-size: 2rem;
+                    font-weight: bold;
                 }
                 h2 {
                     color: #357abd;
-                    margin-top: 2rem;
-                    margin-bottom: 1rem;
-                    font-size: 1.5rem;
+                    margin-top: 1.5rem;
+                    margin-bottom: 0.75rem;
+                    font-weight: bold;
                 }
                 h3 {
                     color: #555;
-                    margin-top: 1.5rem;
-                    margin-bottom: 0.75rem;
-                    font-size: 1.25rem;
+                    margin-top: 1.25rem;
+                    margin-bottom: 0.5rem;
+                    font-weight: bold;
                 }
                 p {
                     margin-bottom: 1rem;

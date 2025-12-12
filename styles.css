@@ -278,28 +278,32 @@ button[type="submit"].processing {
 .printable-content {
     background: white;
     padding: 3rem;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    line-height: 1.6;
+    font-size: 11pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .printable-content h1 {
     color: #4a90e2;
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 18pt;
+    font-weight: bold;
 }
 
 .printable-content h2 {
     color: #357abd;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 14pt;
+    font-weight: bold;
 }
 
 .printable-content h3 {
     color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-size: 12pt;
+    font-weight: bold;
 }
 
 .printable-content p {
@@ -340,77 +344,72 @@ button[type="submit"].processing {
     background-color: #f9f9f9;
 }
 
-/* Age-appropriate typography */
+/* Age-appropriate typography - subtle adjustments */
 .printable-content.age-young {
-    font-size: 1.3rem;
-    line-height: 2.2;
+    font-size: 12pt;
+    line-height: 1.8;
 }
 
 .printable-content.age-young p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .printable-content.age-young h1 {
-    font-size: 2.5rem;
-    line-height: 1.3;
+    font-size: 20pt;
 }
 
 .printable-content.age-young h2 {
-    font-size: 2rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.4;
+    font-size: 15pt;
 }
 
 .printable-content.age-young h3 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 13pt;
 }
 
 .printable-content.age-young li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .printable-content.age-preteen {
-    font-size: 1.15rem;
-    line-height: 1.9;
+    font-size: 11pt;
+    line-height: 1.7;
 }
 
 .printable-content.age-preteen p {
-    margin-bottom: 1.25rem;
-}
-
-.printable-content.age-preteen h1 {
-    font-size: 2.2rem;
-}
-
-.printable-content.age-preteen h2 {
-    font-size: 1.75rem;
-    margin-top: 2.25rem;
     margin-bottom: 1.1rem;
 }
 
+.printable-content.age-preteen h1 {
+    font-size: 19pt;
+}
+
+.printable-content.age-preteen h2 {
+    font-size: 14pt;
+}
+
 .printable-content.age-preteen h3 {
-    font-size: 1.4rem;
-    margin-top: 1.75rem;
+    font-size: 12pt;
 }
 
 .printable-content.age-teen-adult {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 11pt;
+    line-height: 1.6;
 }
 
 .printable-content.age-teen-adult p {
     margin-bottom: 1rem;
 }
 
+.printable-content.age-teen-adult h1 {
+    font-size: 18pt;
+}
+
 .printable-content.age-teen-adult h2 {
-    margin-top: 2rem;
+    font-size: 14pt;
 }
 
 .printable-content.age-teen-adult h3 {
-    margin-top: 1.5rem;
+    font-size: 12pt;
 }
 
 /* Print Styles */
