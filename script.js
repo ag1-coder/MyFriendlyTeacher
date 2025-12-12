@@ -134,6 +134,17 @@ CRITICAL REQUIREMENTS:
    - Break up long text with frequent headings and subheadings
    - NEVER write long walls of text - always break into smaller chunks
 
+   NARRATIVE STYLE (CRITICAL):
+   - Write answers in NARRATIVE, STORYTELLING format - NOT bullet points
+   - Use flowing paragraphs that read like a story or conversation
+   - For ages 5-7: Simple narrative sentences, can use occasional lists for steps
+   - For ages 8+: PRIMARILY narrative prose, minimize bullet points
+   - Weave data and facts INTO the narrative text naturally
+   - Only use bullet/numbered lists for:
+     * Step-by-step instructions
+     * Quick reference summaries at the end of a section
+     * NOT for explaining concepts or answering questions
+
 2. READABILITY FOR AGE GROUP (REQUIRED):
    - For ages 5-10: Very short paragraphs (2-3 sentences), simple questions, lots of white space
    - For ages 11-13: Short paragraphs (3-4 sentences), clear section breaks
@@ -147,8 +158,19 @@ CRITICAL REQUIREMENTS:
    - Cite real scientific discoveries, studies, or historical events
    - Use precise scientific terminology appropriate for the age group
 
-4. DATA TABLES (REQUIRED - STRICT FORMATTING):
-   - Include at least ONE clear HTML table when data aids explanation
+4. DATA TABLES AND INLINE DATA (REQUIRED - STRICT FORMATTING):
+   - For ages 5-7: Optional - use simple data inline in narrative text
+   - For ages 8+: REQUIRED - Include at least ONE clear HTML table when data aids explanation
+
+   INLINE DATA (CRITICAL):
+   - Weave numbers, measurements, and statistics INTO narrative paragraphs
+   - Example: "Scientists discovered that wind speeds can reach up to 200 miles per hour in the strongest tornadoes."
+   - Example: "The Atacama Desert receives less than 1 millimeter of rain per year, making it one of the driest places on Earth."
+   - Make data part of the story, not just a list
+
+   DATA TABLES (for ages 8+):
+   - Use tables to SUMMARIZE data already mentioned in narrative
+   - Tables are for quick reference, not primary explanation
    - Examples: comparisons, timelines, measurements, classifications, statistics
    - ALWAYS use this exact structure:
      * <table> wrapper
@@ -158,9 +180,9 @@ CRITICAL REQUIREMENTS:
      * Maximum 4 columns (for readability)
      * Keep cell content concise (10-15 words max per cell)
      * Use clear, descriptive header labels
-     * Align numbers to the right, text to the left
      * Include units in headers, not in every cell
    - Add a descriptive <h3> heading before each table explaining what it shows
+   - Place tables AFTER narrative explanation, not before
    - Never nest tables or use complex layouts
 
 5. REAL-WORLD EXAMPLES (REQUIRED - 2-3 examples):
@@ -174,9 +196,13 @@ CRITICAL REQUIREMENTS:
    - Use <h2> for main section questions (5-8 sections total)
    - Use <h3> for sub-questions and table headings
    - Keep paragraphs SHORT (3-5 sentences max)
-   - Use <ul> or <ol> lists for ANY information with multiple points
-   - Use <p> tags for every paragraph
-   - Add lots of visual breaks with headings and lists
+   - Use <p> tags for NARRATIVE paragraphs (primary content delivery method)
+   - Use <ul> or <ol> lists SPARINGLY - only for:
+     * Step-by-step instructions or procedures
+     * Quick reference summaries
+     * Safety tips or warnings
+   - DO NOT use bullet points to explain concepts - use narrative paragraphs instead
+   - Add visual breaks with headings, NOT excessive lists
 
 7. TYPOGRAPHY & READABILITY (AGE-APPROPRIATE):
    - For ages 5-10:
