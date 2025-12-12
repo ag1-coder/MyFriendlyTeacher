@@ -16,6 +16,58 @@
             <h2>Welcome to MyFriendlyTeacher</h2>
             <p>Your friendly learning companion</p>
         </section>
+
+        <section class="setup" id="setupSection">
+            <h2>Setup</h2>
+            <div class="form-group">
+                <label for="apiKey">Claude API Key:</label>
+                <input type="password" id="apiKey" placeholder="sk-ant-...">
+                <small>Your API key is stored only in your browser and never sent anywhere except to Claude API</small>
+            </div>
+        </section>
+
+        <section class="input-form" id="inputForm">
+            <h2>Create Your Learning Material</h2>
+            <form id="teacherForm">
+                <div class="form-group">
+                    <label for="topic">Which topic do you want to learn today?</label>
+                    <input type="text" id="topic" name="topic" placeholder="e.g., Solar System, Photosynthesis, World War II" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ageGroup">What's your age group?</label>
+                    <select id="ageGroup" name="ageGroup" required>
+                        <option value="">Select age group</option>
+                        <option value="5-7">5-7 years old</option>
+                        <option value="8-10">8-10 years old</option>
+                        <option value="11-13">11-13 years old</option>
+                        <option value="14-16">14-16 years old</option>
+                        <option value="17+">17+ years old</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pages">How many pages do you want me to generate?</label>
+                    <input type="number" id="pages" name="pages" min="1" max="10" value="2" required>
+                    <small>Approximate pages when printed (1-10)</small>
+                </div>
+
+                <button type="submit" id="generateBtn">Generate Learning Material</button>
+            </form>
+            <div id="loadingMessage" class="loading hidden">
+                Generating your learning material... This may take a moment.
+            </div>
+        </section>
+
+        <section class="output" id="outputSection" class="hidden">
+            <div class="print-controls">
+                <button onclick="window.print()" class="print-btn">Print Article</button>
+                <button onclick="resetForm()" class="reset-btn">Create New Article</button>
+            </div>
+            <article id="generatedContent" class="printable-content">
+                <!-- Generated content will appear here -->
+            </article>
+        </section>
     </main>
 
     <footer>

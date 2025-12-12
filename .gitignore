@@ -13,3 +13,23 @@
 
 # Temporary files
 *.tmp
+
+# Python virtual environment
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment variables (if you add any)
+.env
+.env.local
+
+# API keys (extra safety - never commit these)
+*apikey*
+*api-key*
+*API_KEY*
