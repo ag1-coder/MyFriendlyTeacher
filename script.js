@@ -239,6 +239,99 @@ function displayContent(content, topic, costInfo) {
     outputSection.scrollIntoView({ behavior: 'smooth' });
 }
 
+function printArticle() {
+    // Get the article content
+    const articleContent = document.getElementById('generatedContent').innerHTML;
+
+    // Create a new window for printing
+    const printWindow = window.open('', '_blank');
+
+    // Write clean HTML with only the article
+    printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Print Article</title>
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    line-height: 1.8;
+                    color: #333;
+                    padding: 1in;
+                    max-width: 8.5in;
+                    margin: 0 auto;
+                }
+                h1 {
+                    color: #4a90e2;
+                    margin-bottom: 1rem;
+                    font-size: 2rem;
+                }
+                h2 {
+                    color: #357abd;
+                    margin-top: 2rem;
+                    margin-bottom: 1rem;
+                    font-size: 1.5rem;
+                }
+                h3 {
+                    color: #555;
+                    margin-top: 1.5rem;
+                    margin-bottom: 0.75rem;
+                    font-size: 1.25rem;
+                }
+                p {
+                    margin-bottom: 1rem;
+                    text-align: justify;
+                }
+                ul, ol {
+                    margin-left: 2rem;
+                    margin-bottom: 1rem;
+                }
+                li {
+                    margin-bottom: 0.5rem;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 1.5rem 0;
+                }
+                th {
+                    background-color: #333;
+                    color: white;
+                    padding: 0.75rem;
+                    text-align: left;
+                    font-weight: 600;
+                }
+                td {
+                    padding: 0.75rem;
+                    border: 1px solid #333;
+                }
+                tr:nth-child(even) {
+                    background-color: #f9f9f9;
+                }
+                @media print {
+                    body {
+                        padding: 0;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            ${articleContent}
+        </body>
+        </html>
+    `);
+
+    // Close the document and print
+    printWindow.document.close();
+    printWindow.focus();
+
+    // Wait for content to load, then print
+    setTimeout(() => {
+        printWindow.print();
+        printWindow.close();
+    }, 250);
+}
+
 function resetForm() {
     const outputSection = document.getElementById('outputSection');
     const inputForm = document.getElementById('inputForm');
