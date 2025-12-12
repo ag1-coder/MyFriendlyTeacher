@@ -41,10 +41,16 @@ async function generateContent() {
         return;
     }
 
-    // Show loading state
+    // Show loading state with immediate visual feedback
     const generateBtn = document.getElementById('generateBtn');
     const loadingMessage = document.getElementById('loadingMessage');
+
+    // Immediate button feedback
+    generateBtn.textContent = 'Processing...';
     generateBtn.disabled = true;
+    generateBtn.classList.add('processing');
+
+    // Show loading message
     loadingMessage.classList.remove('hidden');
 
     try {
@@ -94,7 +100,10 @@ async function generateContent() {
         console.error('Error:', error);
         alert('Error generating content: ' + error.message);
     } finally {
+        // Reset button state
+        generateBtn.textContent = 'Generate Learning Material';
         generateBtn.disabled = false;
+        generateBtn.classList.remove('processing');
         loadingMessage.classList.add('hidden');
     }
 }
