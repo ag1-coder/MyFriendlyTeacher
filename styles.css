@@ -124,6 +124,7 @@ button[type="submit"] {
     background-color: #4a90e2;
     color: white;
     width: 100%;
+    position: relative;
 }
 
 button[type="submit]:hover {
@@ -131,8 +132,19 @@ button[type="submit]:hover {
 }
 
 button[type="submit]:disabled {
-    background-color: #ccc;
+    background-color: #95a5a6;
     cursor: not-allowed;
+    opacity: 0.8;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+button[type="submit"]:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
 }
 
 .print-btn {
@@ -162,10 +174,40 @@ button[type="submit]:disabled {
 /* Loading State */
 .loading {
     text-align: center;
-    padding: 2rem;
-    color: #4a90e2;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.loading-subtext {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 /* Visibility */
