@@ -342,6 +342,25 @@ button[type="submit"].processing {
 
 /* Print Styles */
 @media print {
+    /* Hide everything by default */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Only show the printable content */
+    #generatedContent,
+    #generatedContent * {
+        visibility: visible;
+    }
+
+    /* Position printable content at top of page */
+    #generatedContent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
     /* Hide everything except the printable content */
     header, footer, .welcome, .setup, .input-form, .print-controls, .cost-info, .loading {
         display: none !important;
