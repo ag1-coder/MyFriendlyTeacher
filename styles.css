@@ -215,6 +215,30 @@ button[type="submit]:disabled {
     margin-bottom: 0.5rem;
 }
 
+.printable-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+}
+
+.printable-content th {
+    background-color: #4a90e2;
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.printable-content td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+}
+
+.printable-content tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 /* Print Styles */
 @media print {
     /* Hide everything except the printable content */
@@ -266,6 +290,23 @@ button[type="submit]:disabled {
     .printable-content ul,
     .printable-content ol {
         page-break-inside: avoid;
+    }
+
+    .printable-content table {
+        page-break-inside: avoid;
+        margin: 1rem 0;
+        border: 1px solid #333;
+    }
+
+    .printable-content th {
+        background-color: #333 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .printable-content td {
+        border: 1px solid #333;
     }
 
     /* Add page numbers */

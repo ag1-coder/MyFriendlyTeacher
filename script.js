@@ -104,23 +104,57 @@ function buildPrompt(topic, ageGroup, wordCount) {
         '17+': 'young adults and adults. Use advanced vocabulary, comprehensive coverage, and include critical thinking elements.'
     };
 
-    return `You are a friendly, knowledgeable teacher creating educational content about "${topic}" for ${ageDescriptions[ageGroup]}
+    return `You are a friendly, knowledgeable science teacher creating educational content about "${topic}" for ${ageDescriptions[ageGroup]}
 
-Please write an informative, fact-based, knowledge-enhancing article that is approximately ${wordCount} words long.
+Please write a scientifically accurate, fact-based, knowledge-enhancing article that is approximately ${wordCount} words long.
 
-Requirements:
-1. Make it age-appropriate for the target audience
-2. Use proper formatting with clear headings and sections
-3. Include interesting facts and examples
-4. Make it engaging and educational
-5. Use HTML formatting (h1, h2, h3, p, ul, ol tags) to structure the content
-6. Start with a main title using <h1>
-7. Break content into logical sections with <h2> headings
-8. Use <h3> for subsections if needed
-9. Use paragraphs <p> for body text
-10. Use lists <ul> or <ol> where appropriate
+CRITICAL REQUIREMENTS:
 
-Do not include any markdown formatting. Only use HTML tags. Do not include <html>, <body>, or <head> tags - just the content that will go inside an article element.
+1. SCIENTIFIC ACCURACY & FACTS:
+   - Base all content on verified scientific facts and principles
+   - Include specific data, measurements, and numbers where relevant
+   - Cite real scientific discoveries, studies, or historical events
+   - Use precise scientific terminology appropriate for the age group
+
+2. DATA TABLES (REQUIRED):
+   - Include at least ONE clear HTML table when data aids explanation
+   - Examples: comparisons, timelines, measurements, classifications, statistics
+   - Use proper <table>, <thead>, <tbody>, <tr>, <th>, <td> tags
+   - Make tables clear, well-organized, and visually scannable
+   - Add a caption or context before each table
+
+3. REAL-WORLD EXAMPLES (REQUIRED - 2-3 examples):
+   - Include 2-3 concrete, relatable examples that connect to the reader's life
+   - Use age-appropriate references (popular culture, everyday experiences, familiar objects)
+   - Make examples engaging and memorable
+   - Help readers visualize and understand abstract concepts through familiar analogies
+
+4. STRUCTURE & FORMATTING:
+   - Start with a captivating <h1> title
+   - Break content into logical sections with <h2> headings
+   - Use <h3> for subsections as needed
+   - Use paragraphs <p> for body text
+   - Use lists <ul> or <ol> for steps, features, or key points
+   - Make it visually organized and easy to scan
+
+5. ENGAGEMENT:
+   - Write in a warm, encouraging tone
+   - Use storytelling where appropriate
+   - Ask thought-provoking questions (rhetorical)
+   - Create "aha!" moments that spark curiosity
+   - Make learning feel like an exciting discovery
+
+6. AGE-APPROPRIATE LANGUAGE:
+   - Match vocabulary and complexity to the target age group
+   - Explain technical terms when first introduced
+   - Use sentence length appropriate for reading level
+   - Balance simplicity with intellectual respect
+
+FORMATTING RULES:
+- Use ONLY HTML tags (no markdown)
+- Do NOT include <html>, <body>, or <head> tags
+- Content should go directly inside an article element
+- Ensure all tables are properly formatted with headers
 
 Begin the article now:`;
 }
