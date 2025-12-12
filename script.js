@@ -125,51 +125,64 @@ Please write a scientifically accurate, fact-based, knowledge-enhancing article 
 
 CRITICAL REQUIREMENTS:
 
-1. SCIENTIFIC ACCURACY & FACTS:
+1. ARTICLE FORMAT - FAQ/QUESTION-BASED STRUCTURE (REQUIRED):
+   - Organize content using a FAQ (Frequently Asked Questions) format
+   - Each major section should be a clear question that readers want answered
+   - Use <h2> for main questions (e.g., "What is...", "Why does...", "How can you...")
+   - Use <h3> for follow-up sub-questions within sections
+   - Short, digestible paragraphs (3-5 sentences maximum per paragraph)
+   - Break up long text with frequent headings and subheadings
+   - NEVER write long walls of text - always break into smaller chunks
+
+2. READABILITY FOR AGE GROUP (REQUIRED):
+   - For ages 5-10: Very short paragraphs (2-3 sentences), simple questions, lots of white space
+   - For ages 11-13: Short paragraphs (3-4 sentences), clear section breaks
+   - For ages 14+: Medium paragraphs (4-5 sentences), well-organized sections
+   - Use bullet points and numbered lists frequently to break up text
+   - Include section summaries after longer explanations
+
+3. SCIENTIFIC ACCURACY & FACTS:
    - Base all content on verified scientific facts and principles
    - Include specific data, measurements, and numbers where relevant
    - Cite real scientific discoveries, studies, or historical events
    - Use precise scientific terminology appropriate for the age group
 
-2. DATA TABLES (REQUIRED):
+4. DATA TABLES (REQUIRED):
    - Include at least ONE clear HTML table when data aids explanation
    - Examples: comparisons, timelines, measurements, classifications, statistics
    - Use proper <table>, <thead>, <tbody>, <tr>, <th>, <td> tags
    - Make tables clear, well-organized, and visually scannable
-   - Add a caption or context before each table
+   - Add a descriptive <h3> heading before each table
 
-3. REAL-WORLD EXAMPLES (REQUIRED - 2-3 examples):
+5. REAL-WORLD EXAMPLES (REQUIRED - 2-3 examples):
    - Include 2-3 concrete, relatable examples that connect to the reader's life
    - Use age-appropriate references (popular culture, everyday experiences, familiar objects)
    - Make examples engaging and memorable
    - Help readers visualize and understand abstract concepts through familiar analogies
 
-4. STRUCTURE & FORMATTING:
-   - Start with a captivating <h1> title
-   - Break content into logical sections with <h2> headings
-   - Use <h3> for subsections as needed
-   - Use paragraphs <p> for body text
-   - Use lists <ul> or <ol> for steps, features, or key points
-   - Make it visually organized and easy to scan
+6. STRUCTURE & FORMATTING (STRICTLY ENFORCED):
+   - Start with an engaging <h1> title (make it catchy!)
+   - Use <h2> for main section questions (5-8 sections total)
+   - Use <h3> for sub-questions and table headings
+   - Keep paragraphs SHORT (3-5 sentences max)
+   - Use <ul> or <ol> lists for ANY information with multiple points
+   - Use <p> tags for every paragraph
+   - Add lots of visual breaks with headings and lists
 
-5. ENGAGEMENT:
-   - Write in a warm, encouraging tone
+7. ENGAGEMENT:
+   - Write in a warm, conversational tone
    - Use storytelling where appropriate
-   - Ask thought-provoking questions (rhetorical)
+   - Include practical tips and actionable advice
    - Create "aha!" moments that spark curiosity
    - Make learning feel like an exciting discovery
 
-6. AGE-APPROPRIATE LANGUAGE:
-   - Match vocabulary and complexity to the target age group
-   - Explain technical terms when first introduced
-   - Use sentence length appropriate for reading level
-   - Balance simplicity with intellectual respect
-
 FORMATTING RULES:
-- Use ONLY HTML tags (no markdown)
+- Use ONLY HTML tags (no markdown, no ** for bold)
 - Do NOT include <html>, <body>, or <head> tags
 - Content should go directly inside an article element
-- Ensure all tables are properly formatted with headers
+- Ensure all tables are properly formatted with <thead> and <tbody>
+- ALWAYS use proper HTML tags: <h1>, <h2>, <h3>, <p>, <ul>, <ol>, <li>, <table>
+- NEVER use markdown syntax (**, ##, etc.)
 
 Begin the article now:`;
 }
