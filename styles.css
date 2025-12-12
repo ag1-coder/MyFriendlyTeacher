@@ -342,30 +342,21 @@ button[type="submit"].processing {
 
 /* Print Styles */
 @media print {
-    /* Hide everything by default */
-    body * {
-        visibility: hidden;
-    }
-
-    /* Only show the printable content */
-    #generatedContent,
-    #generatedContent * {
-        visibility: visible;
-    }
-
-    /* Position printable content at top of page */
-    #generatedContent {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-    }
-
-    /* Hide everything except the printable content */
-    header, footer, .welcome, .setup, .input-form, .print-controls, .cost-info, .loading {
+    /* Hide absolutely everything */
+    header,
+    footer,
+    .welcome,
+    .setup,
+    .input-form,
+    .print-controls,
+    .cost-info,
+    .loading,
+    main > section:not(.output) {
         display: none !important;
+        visibility: hidden !important;
     }
 
+    /* Ensure only article prints */
     body {
         background: white;
         margin: 0;
@@ -379,11 +370,20 @@ button[type="submit"].processing {
     }
 
     .output {
-        box-shadow: none;
-        padding: 0;
-        margin: 0;
-        background: none;
-        border-radius: 0;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: none !important;
+        border-radius: 0 !important;
+        display: block !important;
+    }
+
+    #costInfo {
+        display: none !important;
+    }
+
+    .print-controls {
+        display: none !important;
     }
 
     .printable-content {
