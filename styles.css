@@ -340,6 +340,79 @@ button[type="submit"].processing {
     background-color: #f9f9f9;
 }
 
+/* Age-appropriate typography */
+.printable-content.age-young {
+    font-size: 1.3rem;
+    line-height: 2.2;
+}
+
+.printable-content.age-young p {
+    margin-bottom: 1.5rem;
+}
+
+.printable-content.age-young h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+.printable-content.age-young h2 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+}
+
+.printable-content.age-young h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.printable-content.age-young li {
+    margin-bottom: 0.75rem;
+}
+
+.printable-content.age-preteen {
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+.printable-content.age-preteen p {
+    margin-bottom: 1.25rem;
+}
+
+.printable-content.age-preteen h1 {
+    font-size: 2.2rem;
+}
+
+.printable-content.age-preteen h2 {
+    font-size: 1.75rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1.1rem;
+}
+
+.printable-content.age-preteen h3 {
+    font-size: 1.4rem;
+    margin-top: 1.75rem;
+}
+
+.printable-content.age-teen-adult {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.printable-content.age-teen-adult p {
+    margin-bottom: 1rem;
+}
+
+.printable-content.age-teen-adult h2 {
+    margin-top: 2rem;
+}
+
+.printable-content.age-teen-adult h3 {
+    margin-top: 1.5rem;
+}
+
 /* Print Styles */
 @media print {
     /* Hide absolutely everything */

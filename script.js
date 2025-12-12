@@ -95,7 +95,7 @@ async function generateContent() {
         const costInfo = calculateCost(usage);
 
         // Display the content with cost info
-        displayContent(generatedText, topic, costInfo);
+        displayContent(generatedText, topic, costInfo, ageGroup);
 
     } catch (error) {
         console.error('Error:', error);
@@ -147,12 +147,21 @@ CRITICAL REQUIREMENTS:
    - Cite real scientific discoveries, studies, or historical events
    - Use precise scientific terminology appropriate for the age group
 
-4. DATA TABLES (REQUIRED):
+4. DATA TABLES (REQUIRED - STRICT FORMATTING):
    - Include at least ONE clear HTML table when data aids explanation
    - Examples: comparisons, timelines, measurements, classifications, statistics
-   - Use proper <table>, <thead>, <tbody>, <tr>, <th>, <td> tags
-   - Make tables clear, well-organized, and visually scannable
-   - Add a descriptive <h3> heading before each table
+   - ALWAYS use this exact structure:
+     * <table> wrapper
+     * <thead> with <tr> containing <th> cells for headers
+     * <tbody> with <tr> containing <td> cells for data
+   - Table formatting rules:
+     * Maximum 4 columns (for readability)
+     * Keep cell content concise (10-15 words max per cell)
+     * Use clear, descriptive header labels
+     * Align numbers to the right, text to the left
+     * Include units in headers, not in every cell
+   - Add a descriptive <h3> heading before each table explaining what it shows
+   - Never nest tables or use complex layouts
 
 5. REAL-WORLD EXAMPLES (REQUIRED - 2-3 examples):
    - Include 2-3 concrete, relatable examples that connect to the reader's life
@@ -169,7 +178,21 @@ CRITICAL REQUIREMENTS:
    - Use <p> tags for every paragraph
    - Add lots of visual breaks with headings and lists
 
-7. ENGAGEMENT:
+7. TYPOGRAPHY & READABILITY (AGE-APPROPRIATE):
+   - For ages 5-10:
+     * Use very simple, short sentences
+     * Add extra line spacing between paragraphs
+     * Include emoji or visual cues where appropriate
+   - For ages 11-13:
+     * Use clear, concise sentences
+     * Normal paragraph spacing
+     * Balance text with visual elements
+   - For ages 14+:
+     * Use more sophisticated vocabulary
+     * Denser content allowed but still scannable
+     * Professional but engaging tone
+
+8. ENGAGEMENT:
    - Write in a warm, conversational tone
    - Use storytelling where appropriate
    - Include practical tips and actionable advice
@@ -210,7 +233,7 @@ function calculateCost(usage) {
     };
 }
 
-function displayContent(content, topic, costInfo) {
+function displayContent(content, topic, costInfo, ageGroup) {
     const outputSection = document.getElementById('outputSection');
     const generatedContent = document.getElementById('generatedContent');
     const inputForm = document.getElementById('inputForm');
@@ -219,6 +242,16 @@ function displayContent(content, topic, costInfo) {
     // Hide the form and show the output
     inputForm.classList.add('hidden');
     outputSection.classList.remove('hidden');
+
+    // Add age-appropriate class for typography
+    generatedContent.className = 'printable-content';
+    if (ageGroup === '5-7' || ageGroup === '8-10') {
+        generatedContent.classList.add('age-young');
+    } else if (ageGroup === '11-13') {
+        generatedContent.classList.add('age-preteen');
+    } else {
+        generatedContent.classList.add('age-teen-adult');
+    }
 
     // Display cost information
     if (costInfo) {
@@ -253,8 +286,12 @@ function displayContent(content, topic, costInfo) {
 }
 
 function printArticle() {
-    // Get the article content
-    const articleContent = document.getElementById('generatedContent').innerHTML;
+    // Get the article content and age class
+    const generatedContent = document.getElementById('generatedContent');
+    const articleContent = generatedContent.innerHTML;
+    const ageClass = generatedContent.classList.contains('age-young') ? 'age-young' :
+                     generatedContent.classList.contains('age-preteen') ? 'age-preteen' :
+                     'age-teen-adult';
 
     // Create a new window for printing
     const printWindow = window.open('', '_blank');
@@ -268,11 +305,22 @@ function printArticle() {
             <style>
                 body {
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    line-height: 1.8;
                     color: #333;
                     padding: 1in;
                     max-width: 8.5in;
                     margin: 0 auto;
+                }
+                body.age-young {
+                    font-size: 1.3rem;
+                    line-height: 2.2;
+                }
+                body.age-preteen {
+                    font-size: 1.15rem;
+                    line-height: 1.9;
+                }
+                body.age-teen-adult {
+                    font-size: 1.1rem;
+                    line-height: 1.8;
                 }
                 h1 {
                     color: #4a90e2;
@@ -328,7 +376,7 @@ function printArticle() {
                 }
             </style>
         </head>
-        <body>
+        <body class="${ageClass}">
             ${articleContent}
         </body>
         </html>
